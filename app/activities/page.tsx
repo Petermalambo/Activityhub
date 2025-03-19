@@ -9,20 +9,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Toaster } from "@/components/ui/sonner"
 import { UserActivities } from "@/components/user-activities"
 import { toast } from "sonner";
 
 
 export default function Activities() {
     const router = useRouter()
-    type Activity = {
+    interface Activity {
         id: number;
         title: string;
         description: string;
         image: string;
-    };
-    const [userActivities, setUserActivities] = useState<any[]>([])
+    }
+
+    const [userActivities, setUserActivities] = useState<Activity[]>([])
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
 
