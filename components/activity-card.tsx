@@ -12,7 +12,7 @@ interface ActivityCardProps {
         description: string
         image: string
     }
-    onSave: (activity: any) => void
+    onSave: (activity: { id: number; title: string; description: string; image: string }) => void
     isSaved: boolean
 }
 

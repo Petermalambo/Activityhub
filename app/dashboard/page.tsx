@@ -217,8 +217,20 @@ const trendingActivities = [
 
 export default function Dashboard() {
     const router = useRouter()
-    const [user, setUser] = useState<any>(null)
-    const [userActivities, setUserActivities] = useState<any[]>([])
+    interface User {
+        name: string;
+        ageGroup: "child" | "teen" | "adult" | "senior";
+    }
+
+    const [user, setUser] = useState<User | null>(null)
+    interface Activity {
+        id: number;
+        title: string;
+        description: string;
+        image: string;
+    }
+
+    const [userActivities, setUserActivities] = useState<Activity[]>([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -241,7 +253,7 @@ export default function Dashboard() {
     }, [router])
 
     // Save user activities to localStorage
-    const saveActivity = (activity: any) => {
+    const saveActivity = (activity: Activity) => {
         const updatedActivities = [...userActivities, activity]
         setUserActivities(updatedActivities)
         localStorage.setItem("userActivities", JSON.stringify(updatedActivities))

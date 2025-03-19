@@ -2,16 +2,15 @@
 
 import { useState } from "react"
 import { signIn } from "next-auth/react"
-import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { FcGoogle } from "react-icons/fc"
-import {toast} from 'sonner'
+// Ensure the correct path to the toast component
+import { toast } from "sonner"
 
 
 
 export default function SignIn() {
-    const router = useRouter()
 
 
     const { toast } = useToast()

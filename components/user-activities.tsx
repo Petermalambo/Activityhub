@@ -6,7 +6,7 @@ import Image from "next/image"
 import { Trash2 } from "lucide-react"
 
 interface UserActivitiesProps {
-    activities: any[]
+    activities: { id: number; title: string; description: string; image?: string }[]
     onRemove: (id: number) => void
 }
 

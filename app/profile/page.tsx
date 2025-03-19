@@ -16,7 +16,14 @@ export default function Profile() {
     const router = useRouter()
     const { toast } = useToast()
     const [isLoading, setIsLoading] = useState(false)
-    const [user, setUser] = useState<any>(null)
+    interface User {
+        name: string;
+        email: string;
+        avatarUrl?: string;
+        ageGroup?: string;
+    }
+
+    const [user, setUser] = useState<User | null>(null)
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [avatarUrl, setAvatarUrl] = useState("")
